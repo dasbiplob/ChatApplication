@@ -1,0 +1,17 @@
+<h1>Chat Messages</h1>
+
+<form method="POST">
+  sender: <input type="text" name="sender" /><br/>
+  message: <input type="text" name="message" /><br/>
+  <input type="submit" value="Submit!" />
+</form>
+
+<h2>five most recent messages</h2>
+
+<% it.senders.forEach((sender) => { %>
+   <li><%= sender.sender %>: <%= sender.message %></li>    
+<% }); %>
+
+
+
+
