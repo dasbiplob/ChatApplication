@@ -1,4 +1,4 @@
-import sql from "../database/database.js";
+import {sql}  from "../database/database.js";
 
 
 const findAll = async () => {
