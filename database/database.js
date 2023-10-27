@@ -1,12 +1,10 @@
-import postgres from "https://deno.land/x/postgresjs@v3.3.5/mod.js";
+import { postgres } from "../deps.js";
 
-const db = postgres({});
+let sql;
+if (Deno.env.get("DATABASE_URL")) {
+  sql = postgres(Deno.env.get("DATABASE_URL"));
+} else {
+  sql = postgres({});
+}
 
-    // hostname: "localhost",
-    // database: "aalto_course",
-    // user: "postgres",
-    // password: "computer",
-    // port: 5432,
-
-
-export default db;
+export { sql };
